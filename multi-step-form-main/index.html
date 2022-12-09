@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="animations.css" /> -->
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container flex">
+        <!-- Sidebar start -->
+        <ul class="plans rel-div">
+          <!-- Plans Nav -->
+          <li class="plans-div rel-div">
+            <span class="num active">1</span>
+            <div class="info">
+              <p class="info-blk">Step 1</p>
+              <p class="info-txt">Your info</p>
+            </div>
+          </li>
+          <!-- End of plans Nav -->
+          <li class="plans-div rel-div">
+            <span class="num">2</span>
+            <div class="info">
+              <p class="info-blk">Step 2</p>
+              <p class="info-txt">Select plan</p>
+            </div>
+          </li>
+          <!-- End of plans Nav -->
+          <li class="plans-div rel-div">
+            <p class="num">3</p>
+            <div class="info">
+              <p class="info-blk">Step 3</p>
+              <p class="info-txt">Add-ons</p>
+            </div>
+          </li>
+          <!-- End of plans Nav -->
+          <li class="plans-div rel-div">
+            <p class="num">4</p>
+            <div class="info">
+              <p class="info-blk">Step 4</p>
+              <p class="info-txt">Summary</p>
+            </div>
+          </li>
+          <!-- End of plans Nav -->
+        </ul>
+        <!-- Sidebar end -->
+        <div class="select">
+          <!-- Step 1 start -->
+          <div class="step step-1 active">
+            <h2>Personal info</h2>
+            <p>Please provide your name, email address, and phone number.</p>
+            <form class="main-form">
+              <div class="form-control">
+                <label class="step-label">Name</label>
+                <input type="text" placeholder="e.g. Stephen King" />
+              </div>
+              <div class="form-control">
+                <label class="step-label">Email Address</label>
+                <input type="text" placeholder="e.g. stephenking@lorem.com" />
+              </div>
+              <div class="form-control">
+                <label class="step-label">Phone Number</label>
+                <input type="text" placeholder="e.g. +1 234 567 890" />
+              </div>
+              <!-- <div class="form-control form-last">
+                <button class="btm-btn">Next Step</button>
+              </div> -->
+            </form>
+          </div>
+          <!-- Step 1 end -->
+          <!-- Step 2 start -->
+          <div class="step step-2">
+            <h2>Select your plan</h2>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="select-per monthly active">
+              <div class="plan-select flex">
+                <!-- Arcade -->
+                <div class="tab active">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-arcade.svg" alt="" />
+                    <div class="price-info">
+                      <p>Arcade</p>
+                      <p class="price">$9/mo</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Advanced -->
+                <div class="tab">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-advanced.svg" alt="" />
+                    <div class="price-info">
+                      <p>Advanced</p>
+                      <p class="price">$12/mo</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pro -->
+                <div class="tab">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-pro.svg" alt="" />
+                    <div class="price-info">
+                      <p>Pro</p>
+                      <p class="price">$15/mo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="select-per yearly">
+              <div class="plan-select flex">
+                <!-- Arcade -->
+                <div class="tab active">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-arcade.svg" alt="" />
+                    <div class="price-info">
+                      <p>Arcade</p>
+                      <p class="price">$90/yr</p>
+                      <div class="price-per">2 months free</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Advanced -->
+                <div class="tab">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-advanced.svg" alt="" />
+                    <div class="price-info">
+                      <p>Advanced</p>
+                      <p class="price">$120/yr</p>
+                      <div class="price-per">2 months free</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pro -->
+                <div class="tab">
+                  <div class="price-txt">
+                    <img src="assets/images/icon-pro.svg" alt="" />
+                    <div class="price-info">
+                      <p>Pro</p>
+                      <p class="price">$150/yr</p>
+                      <div class="price-per">2 months free</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="per">
+              <span class="per-span active">Monthly</span>
+              <label class="toggle-span">
+                <input type="checkbox" class="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <span class="per-span">Yearly</span>
+            </div>
+          </div>
+
+          <!-- Step 2 end -->
+          <!-- Step 3 start -->
+          <div class="step step-3">
+            Pick add-ons Add-ons help enhance your gaming experience. Online
+            service Access to multiplayer games +$1/mo Larger storage Extra 1TB
+            of cloud save +$2/mo Customizable Profile Custom theme on your
+            profile +$2/mo Go Back Next Step
+          </div>
+          <!-- Step 3 end -->
+          <!-- Step 4 start -->
+          <div class="step step-4">
+            Finishing up Double-check everything looks OK before confirming.
+            Dynamically add subscription and add-on selections here Total (per
+            month/year) Go Back Confirm
+          </div>
+          <!-- <div class="step step-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+            molestias saepe, cupiditate voluptas veritatis quod explicabo illo
+            eius quam magni.
+          </div> -->
+          <div class="form-control form-last flex">
+            <button class="go-back">Go back</button>
+            <button class="btm-btn step-2-btn">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 4 end -->
+      </div>
+    </main>
+
+    <!-- Step 2 start -->
+    <!-- 
+    Select your plan You have the option of monthly or yearly billing. Arcade
+    $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step -->
+
+    <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+
+    <!-- Pick add-ons Add-ons help enhance your gaming experience. Online service
+    Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
+    +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back Next
+    Step -->
+
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+
+    <!-- Finishing up Double-check everything looks OK before confirming. -->
+
+    <!-- Dynamically add subscription and add-on selections here -->
+
+    <!-- Total (per month/year) Go Back Confirm -->
+
+    <!-- Step 4 end -->
+
+    <!-- Step 5 start -->
+
+    <!-- Thank you! Thanks for confirming your subscription! We hope you have fun
+    using our platform. If you ever need support, please feel free to email us
+    at support@loremgaming.com. -->
+
+    <!-- Step 5 end -->
+    <script src="app.js"></script>
+  </body>
+</html>

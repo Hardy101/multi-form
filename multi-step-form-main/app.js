@@ -9,21 +9,13 @@ const step_3 = document.querySelector(".step-3");
 const num = document.querySelectorAll(".num");
 const steps = document.querySelectorAll(".step");
 const backBtn = document.querySelector(".go-back");
-let checker = 1;
-stopWorking = () => {
-  console.log("Stop!!!!");
 
-  prompt("submitted");
-  if (checker == steps.length - 1) {
-    backBtn.classList.add("none");
-    btn_step.classList.add("none");
-  }
-};
+
+let checker = 1;
 checkDiv = () => {
   if (checker > steps.length - 1) {
     // checker = 0;
     checker = steps.length - 1;
-    stopWorking();
     //TODO: FINAL PAGE
   }
   steps.forEach((e) => {

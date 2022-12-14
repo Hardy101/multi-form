@@ -1,8 +1,0 @@
-@keyframes slide-up {
-  0% {
-    transform: scaleY(-100px);
-  }
-  100% {
-    transform: scaleY(1px);
-  }
-}

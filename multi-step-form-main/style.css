@@ -4,18 +4,7 @@
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
-:root {
-  --Marine-blue: hsl(213, 96%, 18%);
-  --Purplish-blue: hsl(243, 100%, 62%);
-  --Pastel-blue: hsl(228, 100%, 84%);
-  --Light-blue: hsl(206, 94%, 87%);
-  --Strawberry-red: hsl(354, 84%, 57%);
-  --Cool-gray: hsl(231, 11%, 63%);
-  --Light-gray: hsl(229, 24%, 87%);
-  --Magnolia: hsl(217, 100%, 97%);
-  --Alabaster: hsl(231, 100%, 99%);
-  --White: hsl(0, 0%, 100%);
-}
+
 body {
   background: var(--Magnolia);
 }
@@ -30,6 +19,15 @@ body {
 .align-center {
   display: flex;
   align-items: center;
+}
+.bold {
+  font-family: bold;
+}
+.regular {
+  font-family: regular;
+}
+.medium {
+  font-family: medium;
 }
 .rel-div {
   position: relative;
@@ -69,8 +67,6 @@ main {
   border-radius: 1rem;
   margin: auto;
   width: 58%;
-  height: auto;
-  overflow: hidden;
   gap: 3rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -128,6 +124,7 @@ main {
 }
 .step {
   display: none;
+  font-family: regular;
 }
 .step > h2 {
   font-family: bold;
@@ -138,12 +135,16 @@ main {
   color: var(--Cool-gray);
   margin: 1rem 0;
 }
-.step {
-  font-family: regular;
+.step-5 {
+  text-align: center;
 }
-/* .step > .active {
-    animation: slide-up 0.7s ease-in 1;
-  } */
+.step-5 > h2 {
+  margin: 1.2rem 0;
+}
+.step-5 p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
 .tab-1,
 .tab {
   cursor: pointer;
@@ -181,12 +182,14 @@ main {
 .go-back:hover {
   color: gray;
 }
-.btm-btn {
+.btm-btn,
+.nxt-btn {
   background: var(--Marine-blue);
   color: #fff;
 }
 .go-back,
-.btm-btn {
+.btm-btn,
+.nxt-btn {
   padding: 1rem 1.5rem;
   border-radius: 7px;
   font-family: medium;
@@ -227,6 +230,11 @@ main {
 .tab:hover {
   background: var(--Magnolia);
   transform: scale(1.06);
+}
+.val-label {
+  display: block;
+  font-style: italic;
+  margin-bottom: 1.4rem;
 }
 .select-per {
   display: none;
@@ -312,9 +320,28 @@ input:checked + .slider:before {
   margin: 1rem 0;
   padding: 1rem 1.4rem;
   border-radius: 8px;
+  border: 1px solid transparent;
 }
 .checkbox {
-  padding: 100px;
+  width: 20px;
+  height: 20px;
+  margin: auto 0;
+}
+.checkbox:checked {
+  background: var(--Marine-blue);
+}
+.in-p-span {
+  font-family: medium;
+  color: var(--Marine-blue);
+}
+.in-p-span-2 {
+  color: var(--Cool-gray);
+  margin-top: 0.2rem;
+  font-size: 1rem;
+}
+.price-span {
+  color: var(--Purplish-blue);
+  font-size: 0.9rem;
 }
 .add.active {
   background: var(--Magnolia);
@@ -327,21 +354,37 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
 }
+
 .finish-div {
   padding: 1rem;
   background: var(--Magnolia);
   border-radius: 8px;
 }
-.f-div > p {
-  display: flex;
-  flex-direction: column;
+.f-div {
+  margin: 1rem 0;
+}
+.f-p > span {
+  display: block;
 }
 .btn-chng {
-  width: auto;
-  text-align: left;
-  margin: 0 auto;
+  background: transparent;
+  text-decoration: underline;
+  color: var(--Cool-gray);
+  cursor: pointer;
+}
+.f-p-price {
+  color: var(--Marine-blue);
+}
+.total-div {
+  margin: 1rem 1.5rem;
+}
+.tl-span {
+  font-size: 1.2rem;
 }
 /* display none */
 .none {
   display: none;
+}
+.hide{
+  transform: scale(0);
 }

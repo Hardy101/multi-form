@@ -103,6 +103,9 @@ window.addEventListener("click", () => {
   } else {
     backBtn.classList.remove("none");
   }
+  if (steps[2].classList.contains("active")) {
+    btn_step.textContent = "Next Step";
+  }
   if (steps[3].classList.contains("active")) {
     btn_step.textContent = "Confirm";
   }

@@ -14,7 +14,8 @@
     background: url("assets/images/bg-sidebar-mobile.svg") 50% / cover no-repeat;
     justify-content: space-between;
     border-radius: 0;
-    padding-bottom: 4rem;
+    padding: 2rem 3rem;
+    justify-content: space-around;
     flex-direction: row;
   }
   .plan-select {

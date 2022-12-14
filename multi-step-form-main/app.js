@@ -17,7 +17,13 @@ const step_3_div = document.querySelectorAll(".add");
 const checkbox = document.querySelectorAll(".checkbox");
 
 const btn_change = document.querySelector(".btn-chng");
+const back_to = document.querySelector(".back-to");
 
+if (!steps[0].classList.contains("active")) {
+  back_to.classList.add("none");
+} else {
+  back_to.classList.remove("none");
+}
 // Validation Function
 // validate = () => {
 //   if (name_input && email_input && number_input) {
@@ -96,6 +102,11 @@ if (steps[0].classList.contains("active")) {
 }
 // Last Step
 window.addEventListener("click", () => {
+  if (!steps[0].classList.contains("active")) {
+    back_to.classList.add("none");
+  } else {
+    back_to.classList.remove("none");
+  }
   if (steps[0].classList.contains("active")) {
     backBtn.classList.add("none");
   }

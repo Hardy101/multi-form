@@ -25,16 +25,19 @@ if (!steps[0].classList.contains("active")) {
   back_to.classList.remove("none");
 }
 // Validation Function
-// validate = () => {
-//   if (name_input && email_input && number_input) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
+const validate_label = document.querySelector(".val-label");
+
+validate = () => {
+  if (!name_input.value || !email_input.value || !number_input.value) {
+    validate_label.forEach((e) => {
+      e.classList.remove("none");
+      return 1;
+    });
+  }
+};
 // Implementing the Next Step Feature
 let checker = 0;
-checkDiv = () => {
+nextStep = () => {
   if (checker > steps.length - 1) {
     checker = steps.length - 1;
   }
@@ -49,8 +52,36 @@ checkDiv = () => {
   steps[checker].classList.add("active");
   num[checker].classList.add("active");
 };
+// Validating Step one form
 btn_step.addEventListener("click", () => {
-  checkDiv();
+  if (
+    !name_input.value.trim() ||
+    !email_input.value.trim() ||
+    !number_input.value.trim()
+  ) {
+    if (!name_input.value.trim()) {
+      validate_label.classList.remove("none");
+    }
+    if (!email_input.value.trim()) {
+      validate_label.classList.remove("none");
+    }
+    if (!number_input.value.trim()) {
+      validate_label.classList.remove("none");
+    }
+  } else if (
+    name_input.value.trim() &&
+    email_input.value.trim() &&
+    number_input.value.trim()
+  ) {
+    validate_label.classList.add("none");
+    if (name_input.value.trim()) {
+    }
+    if (email_input.value.trim()) {
+    }
+    if (number_input.value.trim()) {
+    }
+    nextStep();
+  }
   // validate();
 });
 

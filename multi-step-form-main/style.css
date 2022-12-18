@@ -233,8 +233,10 @@ main {
 }
 .val-label {
   display: block;
-  font-style: italic;
-  margin-bottom: 1.4rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: var(--Alabaster);
+  font-family: bold;
 }
 .select-per {
   display: none;
@@ -321,6 +323,7 @@ input:checked + .slider:before {
   padding: 1rem 1.4rem;
   border-radius: 8px;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 .checkbox {
   width: 20px;
@@ -385,6 +388,6 @@ input:checked + .slider:before {
 .none {
   display: none;
 }
-.hide{
+.hide {
   transform: scale(0);
 }

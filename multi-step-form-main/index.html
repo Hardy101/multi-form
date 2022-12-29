@@ -57,21 +57,32 @@
         <!-- Sidebar end -->
         <div class="select rel-div">
           <!-- Step 1 start -->
+
           <div class="step step-1 active">
             <h2>Personal info</h2>
             <p>Please provide your name, email address, and phone number.</p>
 
             <form class="main-form">
-              <label class="val-label str-red none"
+              <label class="val-label label-form str-red none"
                 >Please Input Values for all input fields</label
               >
               <div class="form-control">
-                <label class="step-label">Name</label>
+                <div class="flex">
+                  <label class="step-label">Name</label>
+                  <label class="label-form str-red name-label show-up"
+                    >Name is too short</label
+                  >
+                </div>
                 <input type="text" id="name" placeholder="e.g. Stephen King" />
               </div>
 
               <div class="form-control">
-                <label class="step-label">Email Address</label>
+                <div class="flex">
+                  <label class="step-label">Email Address</label>
+                  <label class="label-form str-red email-label show-up"
+                    >Email missing '@' and(or) '.com'
+                  </label>
+                </div>
                 <input
                   type="email"
                   id="email"
@@ -79,7 +90,13 @@
                 />
               </div>
               <div class="form-control">
-                <label class="step-label">Phone Number</label>
+                <div class="flex">
+                  <label class="step-label">Phone Number</label>
+                  <label class="label-form str-red num-label show-up"
+                    >Number is too short</label
+                  >
+                </div>
+
                 <input
                   type="text"
                   id="number"
@@ -96,7 +113,7 @@
             <div class="select-per monthly active">
               <div class="plan-select flex">
                 <!-- Arcade -->
-                <div class="tab tab-1 active">
+                <div class="tab tab-m tab-1">
                   <div class="price-txt">
                     <img src="assets/images/icon-arcade.svg" alt="" />
                     <div class="price-info">
@@ -106,7 +123,7 @@
                   </div>
                 </div>
                 <!-- Advanced -->
-                <div class="tab tab-2">
+                <div class="tab tab-m tab-2">
                   <div class="price-txt">
                     <img src="assets/images/icon-advanced.svg" alt="" />
                     <div class="price-info">
@@ -116,7 +133,7 @@
                   </div>
                 </div>
                 <!-- Pro -->
-                <div class="tab tab-3">
+                <div class="tab tab-m tab-3">
                   <div class="price-txt">
                     <img src="assets/images/icon-pro.svg" alt="" />
                     <div class="price-info">
@@ -130,7 +147,7 @@
             <div class="select-per yearly">
               <div class="plan-select flex">
                 <!-- Arcade -->
-                <div class="tab tab-1 active">
+                <div class="tab tab-1 tab-year">
                   <div class="price-txt">
                     <img src="assets/images/icon-arcade.svg" alt="" />
                     <div class="price-info">
@@ -141,7 +158,7 @@
                   </div>
                 </div>
                 <!-- Advanced -->
-                <div class="tab tab-2">
+                <div class="tab tab-2 tab-year">
                   <div class="price-txt">
                     <img src="assets/images/icon-advanced.svg" alt="" />
                     <div class="price-info">
@@ -152,7 +169,7 @@
                   </div>
                 </div>
                 <!-- Pro -->
-                <div class="tab tab-3">
+                <div class="tab tab-3 tab-year">
                   <div class="price-txt">
                     <img src="assets/images/icon-pro.svg" alt="" />
                     <div class="price-info">
@@ -167,7 +184,7 @@
             <div class="per">
               <span class="per-span active">Monthly</span>
               <label class="toggle-span">
-                <input type="checkbox" />
+                <input type="checkbox" class="checkerbox" />
                 <span class="slider round"></span>
               </label>
               <span class="per-span">Yearly</span>
@@ -178,8 +195,8 @@
           <div class="step step-3 ">
             <h2>Pick add-ons</h2>
             <p>Add-ons help enhance your gaming experience.</p>
-            <div class="add-ons">
-              <div class="add add-1 active">
+            <div class="add-ons month_add">
+              <div class="add add-1">
                 <div class="in-p flex">
                   <input type="checkbox" class="checkbox" />
                   <p>
@@ -200,6 +217,7 @@
                 </div>
                 <span class="price-span">+$2/mo </span>
               </div>
+              <!-- End of Div -->
               <div class="add add-3">
                 <div class="in-p flex">
                   <input type="checkbox" class="checkbox" />
@@ -211,6 +229,43 @@
                   </p>
                 </div>
                 <span class="price-span">+$2/mo</span>
+              </div>
+              <!-- End of Div -->
+            </div>
+            <!-- End of Monthy Add-ons -->
+            <div class="add-ons year_add none">
+              <div class="add add-1">
+                <div class="in-p flex">
+                  <input type="checkbox" class="checkbox" />
+                  <p>
+                    <span class="in-p-span">Online service</span>
+                    <span class="in-p-span-2">Access to multiplayer games</span>
+                  </p>
+                </div>
+                <span class="price-span">+$10/yr </span>
+              </div>
+              <!-- End of Div -->
+              <div class="add add-2">
+                <div class="in-p flex">
+                  <input type="checkbox" class="checkbox" />
+                  <p>
+                    <span class="in-p-span">Larger storage</span>
+                    <span class="in-p-span-2">Extra 1TB of cloud save</span>
+                  </p>
+                </div>
+                <span class="price-span">+$20/yr </span>
+              </div>
+              <div class="add add-3">
+                <div class="in-p flex">
+                  <input type="checkbox" class="checkbox" />
+                  <p>
+                    <span class="in-p-span">Customizable Profile</span>
+                    <span class="in-p-span-2"
+                      >Custom theme on your profile</span
+                    >
+                  </p>
+                </div>
+                <span class="price-span">+$20/yr</span>
               </div>
             </div>
           </div>

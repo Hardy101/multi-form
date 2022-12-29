@@ -4,7 +4,6 @@
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
-
 body {
   background: var(--Magnolia);
 }
@@ -45,8 +44,9 @@ button:focus {
   outline: none;
 }
 main {
-  height: 90vh;
+  min-height: 100vh;
   display: grid;
+  place-items: center;
 }
 /* FONTS */
 @font-face {
@@ -65,7 +65,6 @@ main {
   background: #fff;
   padding: 1rem 4rem 1rem 1rem;
   border-radius: 1rem;
-  margin: auto;
   width: 58%;
   gap: 3rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -186,6 +185,7 @@ main {
 .nxt-btn {
   background: var(--Marine-blue);
   color: #fff;
+  cursor: pointer;
 }
 .go-back,
 .btm-btn,
@@ -216,7 +216,7 @@ main {
 .plan-select {
   margin: 2rem 0;
 }
-.plan-select > .active {
+.plan-select > .active-tab {
   border: 1px solid var(--Purplish-blue);
   background: var(--Magnolia);
 }
@@ -227,16 +227,20 @@ main {
   border-radius: 6px;
   padding: 0.7rem;
 }
+
 .tab:hover {
   background: var(--Magnolia);
   transform: scale(1.06);
 }
-.val-label {
+.label-form {
   display: block;
   text-align: center;
   padding: 0.5rem;
   background: var(--Alabaster);
   font-family: bold;
+}
+.name-label, .email-label, .num-label{
+  background: transparent;
 }
 .select-per {
   display: none;
@@ -388,6 +392,6 @@ input:checked + .slider:before {
 .none {
   display: none;
 }
-.hide {
+.show-up{
   transform: scale(0);
 }

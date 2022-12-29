@@ -242,6 +242,18 @@ if (steps[0].classList.contains("active")) {
 
 // Activating Functions when the window is Interacted with
 window.addEventListener("click", () => {
+  if (name_input.value.trim().length >= 5) {
+    name_label.classList.add("show-up");
+  }
+  if (
+    email_input.value.trim().includes("@") &&
+    email_input.value.trim().includes(".com")
+  ) {
+    email_label.classList.add("show-up");
+  }
+  if (number_input.value.trim().length >= 10) {
+    num_label.classList.add("show-up");
+  }
   add_ons();
   add_div();
   // Making the Empty Button show when the first step is active
@@ -269,17 +281,5 @@ window.addEventListener("click", () => {
     num[3].classList.add("active");
     btn_step.classList.add("none");
     backBtn.classList.add("none");
-  }
-  if (name_input.value.trim().length >= 5) {
-    name_label.classList.add("show-up");
-  }
-  if (
-    email_input.value.trim().includes("@") &&
-    email_input.value.trim().includes(".com")
-  ) {
-    email_label.classList.add("show-up");
-  }
-  if (number_input.value.trim().length >= 10) {
-    num_label.classList.add("show-up");
   }
 });

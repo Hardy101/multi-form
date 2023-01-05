@@ -239,7 +239,9 @@ main {
   background: var(--Alabaster);
   font-family: bold;
 }
-.name-label, .email-label, .num-label{
+.name-label,
+.email-label,
+.num-label {
   background: transparent;
 }
 .select-per {
@@ -367,6 +369,7 @@ input:checked + .slider:before {
   background: var(--Magnolia);
   border-radius: 8px;
 }
+
 .f-div {
   margin: 1rem 0;
 }
@@ -392,6 +395,6 @@ input:checked + .slider:before {
 .none {
   display: none;
 }
-.show-up{
+.show-up {
   transform: scale(0);
 }

@@ -26,10 +26,20 @@ const tab_plan = document.querySelectorAll(".tab-m");
 const tab_year = document.querySelectorAll(".tab-year");
 const monthly_div = document.querySelector(".monthly");
 const yearly_div = document.querySelector(".yearly");
+const all_select = document.querySelectorAll(".tab-select");
 
 // Selecting Elemnts from Add-ons Step
 const month_add = document.querySelector(".month_add");
 const year_add = document.querySelector(".year_add");
+
+// Selecting Elements from Finish Step
+const select_gen = document.querySelectorAll(".per-sel");
+const month_select_div = document.querySelector(".monthly-select");
+const year_select_div = document.querySelector(".yearly-select");
+const select_div = document.querySelectorAll(".p-div");
+const month_fin_step = document.querySelector(".monthly-f-div");
+const year_fin_step = document.querySelector(".yearly-f-div");
+const span_total = document.querySelector('.total-span')
 
 const btn_change = document.querySelector(".btn-chng");
 // Button created to push "next btn" to the right when back button is not displayed
@@ -53,11 +63,13 @@ add_div = () => {
   function add_tab(x) {
     if (step_3_div[x].classList.contains("active")) {
       checkbox[x].checked = true;
+      select_div[x].classList.remove("none");
     }
   }
   function remove_tab(x) {
     if (!step_3_div[x].classList.contains("active")) {
       checkbox[x].checked = false;
+      select_div[x].classList.add("none");
     }
   }
   add_tab(0);
@@ -73,6 +85,33 @@ add_div = () => {
   remove_tab(4);
   remove_tab(5);
 };
+// Select
+select_period = () => {
+  function add_period(x) {
+    if (all_select[x].classList.contains("active-tab")) {
+      select_gen[x].classList.remove("none");
+      // Finish step
+    }
+  }
+  function rem_period(x) {
+    if (!all_select[x].classList.contains("active-tab")) {
+      select_gen[x].classList.add("none");
+    }
+  }
+  add_period(0);
+  add_period(1);
+  add_period(2);
+  add_period(3);
+  add_period(4);
+  add_period(5);
+  rem_period(0);
+  rem_period(1);
+  rem_period(2);
+  rem_period(3);
+  rem_period(4);
+  rem_period(5);
+};
+select_period();
 // Validation Function
 const validate_label = document.querySelector(".val-label");
 // Implementing the Next Step Feature
@@ -202,23 +241,27 @@ checkbox_plan.addEventListener("click", (event) => {
 });
 
 /////////////////////////////////////
-if (!checkbox_plan.checked) {
-  monthly_div.classList.add("none");
-  yearly_div.classList.remove("none");
+// Selecting Periods of Add-ons and Finishing Step
+function checkStep() {
+  if (checkbox_plan.checked) {
+    month_select_div.classList.remove("none");
+    year_select_div.classList.add("none");
+    month_fin_step.classList.remove("none");
+    year_fin_step.classList.add("none");
+    span_total.textContent = 'Month'
+  } else {
+    monthly_div.classList.add("none");
+    month_select_div.classList.add("none");
+    yearly_div.classList.remove("none");
+    year_select_div.classList.remove("none");
+
+    month_fin_step.classList.add("none");
+    year_fin_step.classList.remove("none");
+
+    span_total.textContent = 'Year'
+  }
 }
-
-// slider.addEventListener("click", (event) => {
-//   if (event.currentTarget.checked) {
-//     pricePeriod.forEach((div) => {
-//       div.classList.toggle("active");
-//     });
-//   } else if (!event.currentTarget.checked) {
-//     pricePeriod.forEach((div) => {
-//       div.classList.toggle("active");
-//     });
-//   }
-// });
-
+checkStep();
 // Implementing the pick add-ons feature in step 3
 step_3_div.forEach((step_3_div) => {
   step_3_div.addEventListener("click", (e) => {
@@ -242,6 +285,8 @@ if (steps[0].classList.contains("active")) {
 
 // Activating Functions when the window is Interacted with
 window.addEventListener("click", () => {
+  select_period();
+  checkStep();
   if (name_input.value.trim().length >= 5) {
     name_label.classList.add("show-up");
   }
@@ -251,7 +296,7 @@ window.addEventListener("click", () => {
   ) {
     email_label.classList.add("show-up");
   }
-  if (number_input.value.trim().length >= 10) {
+  if (number_input.value.trim().length >= 11) {
     num_label.classList.add("show-up");
   }
   add_ons();
